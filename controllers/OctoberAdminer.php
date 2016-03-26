@@ -28,11 +28,10 @@
         }
 
         public function iframe() {
-            self::runAdminer();
+            self::runAdminer(true);
         }
 
-        private function runAdminer() {
-            $enable_plugins = true;
+        private function runAdminer($plugins=false) {
             require(plugins_path() . '/martin/adminer/classes/adminer-4.2.4-en.php');
             return new \Martin\Adminer\Classes\EmptyResponse();
         }

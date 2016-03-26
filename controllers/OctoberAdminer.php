@@ -33,7 +33,7 @@
 
         private function runAdminer() {
             $enable_plugins = true;
-            require(plugins_path() . '/martin/adminer/classes/adminer-en.php');
+            require(plugins_path() . '/martin/adminer/classes/adminer-4.2.4-en.php');
             return new \Martin\Adminer\Classes\EmptyResponse();
         }
 

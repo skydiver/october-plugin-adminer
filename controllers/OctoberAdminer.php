@@ -23,12 +23,12 @@
                     'URL' => \Backend::url('martin/adminer/octoberadminer/iframe')
                 ]);
             } else {
-                $this->runAdminer();
+                return $this->runAdminer();
             }
         }
 
         public function iframe() {
-            self::runAdminer(true);
+            return $this->runAdminer(true);
         }
 
         private function runAdminer($plugins=false) {

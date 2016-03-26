@@ -11,6 +11,10 @@
             'label' => 'Adminer',
         ],
 
+        'settings' => [
+            'mode' => 'Launch mode'
+        ],
+
         'permissions' => [
             'tab'   => 'Adminer',
             'label' => 'Access Adminer from October backend'

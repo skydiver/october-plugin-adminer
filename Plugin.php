@@ -28,6 +28,20 @@
             ];
         }
 
+        public function registerSettings() {
+            return [
+                'settings' => [
+                    'label'       => 'martin.adminer::lang.plugin.name',
+                    'description' => 'martin.adminer::lang.plugin.description',
+                    'icon'        => 'icon-database',
+                    'class'       => '\Martin\Adminer\Models\Settings',
+                    'order'       => 500,
+                    'permissions' => ['martin.adminer.access'],
+                    'category'    => 'system::lang.system.categories.system'
+                ],
+            ];
+        }
+
         public function registerPermissions() {
             return [
                 'martin.adminer.access_adminer' => ['tab' => 'martin.adminer::lang.permissions.tab', 'label' => 'martin.adminer::lang.permissions.label'],

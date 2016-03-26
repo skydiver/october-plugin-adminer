@@ -1,0 +1,13 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    mode:
+        label   : martin.adminer::lang.settings.mode
+        span    : left
+        required: true
+        type    : radio
+        options :
+            1: Full window
+            2: IFrame

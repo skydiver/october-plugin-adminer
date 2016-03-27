@@ -3,11 +3,24 @@
 # ===================================
 
 fields:
+
+    mode_section:
+        label  : martin.adminer::lang.settings.mode
+        comment: martin.adminer::lang.settings.comments.mode
+        type   : section
     mode:
-        label   : martin.adminer::lang.settings.mode
         span    : left
-        required: true
         type    : radio
+        default : 1
         options :
             1: Full window
             2: IFrame
+
+    autologin_section:
+        label  : martin.adminer::lang.settings.autologin
+        comment: martin.adminer::lang.settings.comments.autologin
+        type   : section
+    autologin:
+        span   : left
+        type   : switch
+        default: false

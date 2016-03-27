@@ -12,7 +12,12 @@
         ],
 
         'settings' => [
-            'mode' => 'Launch mode'
+            'mode'      => 'Launch mode',
+            'autologin' => 'MySQL Autologin',
+            'comments'  => [
+                'mode'      => 'Defines how to launch Adminer',
+                'autologin' => 'Login directly into OctoberCMS configured database'
+            ]
         ],
 
         'permissions' => [

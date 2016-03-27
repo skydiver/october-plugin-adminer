@@ -17,15 +17,24 @@
         }
 
         public function registerNavigation() {
+
+            $default    = config('database.default');
+            $connection = config('database.connections.' . $default);
+            if($connection['driver'] == 'mysql') {
+                $server = $connection['host'] . (($connection['port'] != '') ? ':' . $connection['port'] : '');
+                $params = '?server='.$server.'&username='.$connection['username'].'&db='.$connection['database'];
+            } else { $params = ''; }
+
             return [
                 'adminer' => [
                     'label'       => 'martin.adminer::lang.navigation.label',
-                    'url'         => Backend::url('martin/adminer/octoberadminer'),
+                    'url'         => Backend::url('martin/adminer/octoberadminer'.$params),
                     'permissions' => ['martin.adminer.access_adminer'],
                     'icon'        => 'icon-database',
                     'order'       => 900
                 ]
             ];
+
         }
 
         public function registerSettings() {

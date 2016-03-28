@@ -31,7 +31,6 @@
 
         private static function getMySQLParams() {
             $default    = config('database.default');
-            $default = 'mysql';
             $connection = config('database.connections.' . $default);
             return $connection;
         }

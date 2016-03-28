@@ -2,9 +2,10 @@
 
     namespace Martin\Adminer\Controllers;
 
+    use Session;
     use Backend\Classes\Controller;
     use Martin\Adminer\Models\Settings as Settings;
-    use Session;
+    use Martin\Adminer\Classes\OctoberAdminerHelper;
 
     class OctoberAdminer extends Controller {
 
@@ -48,22 +49,8 @@
         private function runAdminerIFrame() {
             $this->addCss('/plugins/martin/adminer/assets/css/styles.css');
             return \View::make('martin.adminer::iframe', [
-                'URL' => \Backend::url('martin/adminer/octoberadminer/iframe'.$this->getAutologinURL())
+                'URL' => \Backend::url('martin/adminer/octoberadminer/iframe' . OctoberAdminerHelper::getAutologinURL())
             ]);
-        }
-
-        private function getAutologinURL() {
-            $params    = '';
-            $autologin = Settings::get('autologin', 0);
-            if($autologin == 1) {
-                $default    = config('database.default');
-                $connection = config('database.connections.' . $default);
-                if($connection['driver'] == 'mysql') {
-                    $server = $connection['host'] . (($connection['port'] != '') ? ':' . $connection['port'] : '');
-                    $params = '?server='.$server.'&username='.$connection['username'].'&db='.$connection['database'];
-                }
-            }
-            return $params;
         }
 
     }

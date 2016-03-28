@@ -21,10 +21,9 @@
 
                 function credentials() {
                     if(Session::get('ADMINER_AUTOLOGIN') === true) {
-                        $default    = config('database.default');
-                        $connection = config('database.connections.' . $default);
+                        require_once(plugins_path() . '/martin/adminer/classes/OctoberAdminerHelper.php');
+                        $connection = Martin\Adminer\Classes\OctoberAdminerHelper::getAutologinParams();
                         if($connection['driver'] == 'mysql') {
-                            $server = $connection['host'] . (($connection['port'] != '') ? ':' . $connection['port'] : '');
                             return [$server, $connection['username'], $connection['password']];
                         }
                     }

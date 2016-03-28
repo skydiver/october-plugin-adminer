@@ -4,6 +4,8 @@
 
     use Backend;
     use System\Classes\PluginBase;
+    use Martin\Adminer\Classes\OctoberAdminerHelper;
+    use Martin\Adminer\Models\Settings as Settings;
 
     class Plugin extends PluginBase {
 
@@ -17,18 +19,10 @@
         }
 
         public function registerNavigation() {
-
-            $default    = config('database.default');
-            $connection = config('database.connections.' . $default);
-            if($connection['driver'] == 'mysql') {
-                $server = $connection['host'] . (($connection['port'] != '') ? ':' . $connection['port'] : '');
-                $params = '?server='.$server.'&username='.$connection['username'].'&db='.$connection['database'];
-            } else { $params = ''; }
-
             return [
                 'adminer' => [
                     'label'       => 'martin.adminer::lang.navigation.label',
-                    'url'         => Backend::url('martin/adminer/octoberadminer'.$params),
+                    'url'         => Backend::url('martin/adminer/octoberadminer' . OctoberAdminerHelper::getAutologinURL()),
                     'permissions' => ['martin.adminer.access_adminer'],
                     'icon'        => 'icon-database',
                     'order'       => 900

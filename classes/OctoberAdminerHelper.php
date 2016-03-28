@@ -6,8 +6,10 @@
 
     class OctoberAdminerHelper {
 
-        public static function getAutologinURL() {
-            if(Settings::get('autologin', 0) == 0) { return ''; }
+        public static function getAutologinURL($nav=false) {
+            $mode      = Settings::get('mode'     , 1);
+            $autologin = Settings::get('autologin', 0);
+            if($autologin == 0 || ($nav == true && $mode == 2)) { return ''; }
             $connection = self::getMySQLParams();
             if($connection['driver'] == 'mysql') {
                 $server = self::getServerAddress();

@@ -22,7 +22,7 @@
             return [
                 'adminer' => [
                     'label'       => 'martin.adminer::lang.navigation.label',
-                    'url'         => Backend::url('martin/adminer/octoberadminer' . OctoberAdminerHelper::getAutologinURL()),
+                    'url'         => Backend::url('martin/adminer/octoberadminer' . OctoberAdminerHelper::getAutologinURL(true)),
                     'permissions' => ['martin.adminer.access_adminer'],
                     'icon'        => 'icon-database',
                     'order'       => 900

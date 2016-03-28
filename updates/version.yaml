@@ -7,3 +7,5 @@
     - Bugfix
 1.2.0:
     - Autologin feature (MySQL only)
+1.2.1:
+    - Bugfix

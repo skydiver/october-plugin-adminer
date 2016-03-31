@@ -18,7 +18,9 @@
             'comments'  => [
                 'mode'      => 'Defines how to launch Adminer',
                 'autologin' => 'Login directly into OctoberCMS MySQL database'
-            ]
+            ],
+            'full_window' => 'Full window',
+            'iframe'      => 'Iframe',
         ],
 
         'permissions' => [

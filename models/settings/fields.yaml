@@ -8,18 +8,20 @@ fields:
         label  : martin.adminer::lang.settings.mode
         comment: martin.adminer::lang.settings.comments.mode
         type   : section
+
     mode:
         span    : left
         type    : radio
         default : 1
         options :
-            1: Full window
-            2: IFrame
+            1: martin.adminer::lang.settings.full_window
+            2: martin.adminer::lang.settings.iframe
 
     autologin_section:
         label  : martin.adminer::lang.settings.autologin
         comment: martin.adminer::lang.settings.comments.autologin
         type   : section
+
     autologin:
         span   : left
         type   : switch

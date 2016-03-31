@@ -3,8 +3,8 @@
     return [
 
         'plugin' => [
-            'name'              => 'Adminer for OctoberCMS',
-            'description'       => 'Load a private instance of Adminer from October backend',
+            'name'        => 'Adminer for OctoberCMS',
+            'description' => 'Load a private instance of Adminer from October backend',
         ],
 
         'navigation' => [
@@ -12,6 +12,7 @@
         ],
 
         'settings' => [
+            'label'     => 'Adminer settings',
             'mode'      => 'Launch mode',
             'autologin' => 'MySQL Autologin',
             'comments'  => [

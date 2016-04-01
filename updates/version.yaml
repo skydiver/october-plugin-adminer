@@ -9,3 +9,6 @@
     - Autologin feature (MySQL only)
 1.2.1:
     - Bugfix
+1.2.2:
+    - added Hungarian language (thanks to gergo85)
+    - added missing translations

@@ -26,6 +26,8 @@
                         if($connection['driver'] == 'mysql') {
                             return [$server, $connection['username'], $connection['password']];
                         }
+                    } else {
+                        return array(SERVER, $_GET['username'], get_password());
                     }
                 }
 

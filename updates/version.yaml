@@ -12,3 +12,5 @@
 1.2.2:
     - added Hungarian language (thanks to gergo85)
     - added missing translations
+1.2.3:
+    - fix with manual login

@@ -3,24 +3,24 @@
     return [
 
         'plugin' => [
-            'name'        => 'Adminer adatbázis kezelő',
-            'description' => 'A weboldal adatbázisának menedzselése.',
+            'name'        => 'Adatbázis kezelő',
+            'description' => 'A weboldal adatbázisának menedzselése.'
         ],
 
         'navigation' => [
-            'label' => 'Adatbázis',
+            'label' => 'Adatbázis'
         ],
 
         'settings' => [
             'label'     => 'Adatbázis',
-            'mode'      => 'Futattás típusa',
+            'mode'      => 'Futtatás típusa',
             'autologin' => 'Automatikus bejelentkezés',
             'comments'  => [
-                'mode'      => 'Az adatbázis megjelenésének módja.',
+                'mode'      => 'Az adatbázis kezelő megjelenésének módja.',
                 'autologin' => 'Azonnali beléptetés az adatbázis kezelőbe.'
             ],
             'full_window' => 'Teljes képernyőn',
-            'iframe'      => 'Keretben',
+            'iframe'      => 'Keretben'
         ],
 
         'permissions' => [

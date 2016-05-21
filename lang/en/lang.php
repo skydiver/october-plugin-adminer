@@ -4,11 +4,11 @@
 
         'plugin' => [
             'name'        => 'Adminer for OctoberCMS',
-            'description' => 'Load a private instance of Adminer from October backend',
+            'description' => 'Load a private instance of Adminer from October backend'
         ],
 
         'navigation' => [
-            'label' => 'Adminer',
+            'label' => 'Adminer'
         ],
 
         'settings' => [
@@ -20,7 +20,7 @@
                 'autologin' => 'Login directly into OctoberCMS MySQL database'
             ],
             'full_window' => 'Full window',
-            'iframe'      => 'Iframe',
+            'iframe'      => 'Iframe'
         ],
 
         'permissions' => [

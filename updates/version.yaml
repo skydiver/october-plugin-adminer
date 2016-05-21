@@ -14,3 +14,6 @@
     - added missing translations
 1.2.3:
     - fix with manual login
+1.2.4:
+    - added MIT license
+    - updated Hungarian language (thanks to gergo85)

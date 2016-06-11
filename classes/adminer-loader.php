@@ -24,7 +24,7 @@
                         require_once(plugins_path() . '/martin/adminer/classes/OctoberAdminerHelper.php');
                         $connection = Martin\Adminer\Classes\OctoberAdminerHelper::getAutologinParams();
                         if($connection['driver'] == 'mysql') {
-                            return [$server, $connection['username'], $connection['password']];
+                            return [$connection['server'], $connection['username'], $connection['password']];
                         }
                     } else {
                         return array(SERVER, $_GET['username'], get_password());

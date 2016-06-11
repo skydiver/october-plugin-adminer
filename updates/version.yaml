@@ -17,3 +17,5 @@
 1.2.4:
     - added MIT license
     - updated Hungarian language (thanks to gergo85)
+1.2.5:
+    - fix on Autologin

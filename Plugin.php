@@ -26,6 +26,7 @@
                     'url'         => Backend::url('martin/adminer/octoberadminer' . OctoberAdminerHelper::getAutologinURL(true)),
                     'permissions' => ['martin.adminer.access_adminer'],
                     'icon'        => 'icon-database',
+                    'iconSvg'     => 'plugins/martin/adminer/assets/imgs/icon.svg',
                     'order'       => 900
                 ]
             ];

@@ -40,6 +40,6 @@
     }
 
     # LOAD MAIN ADMINER CLASS
-    require(plugins_path() . '/martin/adminer/classes/adminer-4.2.4-en.php');
+    require(plugins_path() . '/martin/adminer/classes/adminer-4.2.5-en.php');
 
 ?>

@@ -18,4 +18,5 @@
     - added MIT license
     - updated Hungarian language (thanks to gergo85)
 1.2.5:
+    - Upgrade to Adminer 4.2.5
     - fix on Autologin

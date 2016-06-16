@@ -21,3 +21,5 @@
     - Upgrade to Adminer 4.2.5
     - fix on Autologin
     - added svg toolbar icon
+1.2.6:
+    - Fixed SQLite support

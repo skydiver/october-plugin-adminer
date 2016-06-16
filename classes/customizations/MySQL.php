@@ -1,0 +1,23 @@
+<?php
+
+    class AdminerCustomization extends AdminerPlugin {
+
+        function name() {
+            return Lang::get('martin.adminer::lang.plugin.name');
+        }
+
+        function credentials() {
+            if(Session::get('ADMINER_AUTOLOGIN') === true) {
+                require_once(plugins_path() . '/martin/adminer/classes/OctoberAdminerHelper.php');
+                $connection = Martin\Adminer\Classes\OctoberAdminerHelper::getAutologinParams();
+                if($connection['driver'] == 'mysql') {
+                    return [$connection['server'], $connection['username'], $connection['password']];
+                }
+            } else {
+                return array(SERVER, $_GET['username'], get_password());
+            }
+        }
+
+    }
+
+?>

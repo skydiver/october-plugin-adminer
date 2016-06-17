@@ -9,7 +9,7 @@
         function credentials() {
             if(Session::get('ADMINER_AUTOLOGIN') === true) {
                 require_once(plugins_path() . '/martin/adminer/classes/OctoberAdminerHelper.php');
-                $connection = Martin\Adminer\Classes\OctoberAdminerHelper::getAutologinParams();
+                $connection = Martin\Adminer\Classes\OctoberAdminerHelper::getMySQLAutologinParams();
                 if($connection['driver'] == 'mysql') {
                     return [$connection['server'], $connection['username'], $connection['password']];
                 }

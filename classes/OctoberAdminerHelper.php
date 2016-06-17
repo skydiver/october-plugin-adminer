@@ -11,8 +11,9 @@
             $autologin = Settings::get('autologin', 0);
             if($autologin == 0 || ($nav == true && $mode == 2)) { return ''; }
             $connection = self::getMySQLParams();
+            $connection = self::getDBConnectionParams();
             if($connection['driver'] == 'mysql') {
-                $server = self::getServerAddress();
+                $server = self::getMySQLServerAddress();
                 $params = '?server='.$server.'&username='.$connection['username'].'&db='.$connection['database'];
             } else {
                 $params = '';
@@ -20,9 +21,9 @@
             return $params;
         }
 
-        public static function getAutologinParams() {
-            $connection = self::getMySQLParams();
-            $server     = self::getServerAddress();
+        public static function getMySQLAutologinParams() {
+            $connection = self::getDBConnectionParams();
+            $server     = self::getMySQLServerAddress();
             return [
                 'driver'   => $connection['driver'],
                 'server'   => $server,
@@ -31,14 +32,14 @@
             ];
         }
 
-        private static function getMySQLParams() {
+        public static function getDBConnectionParams() {
             $default    = config('database.default');
             $connection = config('database.connections.' . $default);
             return $connection;
         }
 
-        private static function getServerAddress() {
-            $connection = self::getMySQLParams();
+        private static function getMySQLServerAddress() {
+            $connection = self::getDBConnectionParams();
             $server = $connection['host'] . (($connection['port'] != '') ? ':' . $connection['port'] : '');
             return $server;
         }

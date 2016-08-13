@@ -14,10 +14,13 @@
         'settings' => [
             'label'     => 'Adatbázis',
             'mode'      => 'Futtatás típusa',
-            'autologin' => 'Automatikus bejelentkezés',
+            'autologin' => 'MySQL belépés',
+            'sqlite_autologin' => 'SQLite belépés',
             'comments'  => [
                 'mode'      => 'Az adatbázis kezelő megjelenésének módja.',
-                'autologin' => 'Azonnali beléptetés az adatbázis kezelőbe.'
+                'autologin' => 'Automatikus bejelentkezés a felületre.',
+                'sqlite_autologin' => 'Automatikus bejelentkezés a felületre.',
+                'sqlite_path'      => 'Alapértelmezett adatbázis használata'
             ],
             'full_window' => 'Teljes képernyőn',
             'iframe'      => 'Keretben'

@@ -24,3 +24,5 @@
 1.2.6:
     - Fixed SQLite support
     - Added SQLite Autologin
+1.2.6.1:
+    - Update the Hungarian translate

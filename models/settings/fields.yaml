@@ -10,17 +10,17 @@ fields:
         type   : section
 
     mode:
-        span    : left
-        type    : radio
+        type    : balloon-selector
         default : 1
         options :
             1: martin.adminer::lang.settings.full_window
             2: martin.adminer::lang.settings.iframe
 
     autologin_section:
-        label  : martin.adminer::lang.settings.autologin
-        comment: martin.adminer::lang.settings.autologin_comment
-        type   : section
+        label   : martin.adminer::lang.settings.autologin
+        comment : martin.adminer::lang.settings.autologin_comment
+        type    : section
+        cssClass: m-t-md
 
     autologin:
         span      : left

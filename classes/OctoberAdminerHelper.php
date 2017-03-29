@@ -7,25 +7,36 @@
     class OctoberAdminerHelper {
 
         public static function getAutologinURL($nav=false) {
-            $mode             = Settings::get('mode'            , 1);
-            $autologin        = Settings::get('autologin'       , 0);
-            $sqlite_autologin = Settings::get('sqlite_autologin', 0);
-            if(($autologin == 0 && $sqlite_autologin == 0) || ($nav == true && $mode == 2)) { return ''; }
+
+            $mode       = Settings::get('mode'     , 1);
+            $autologin  = Settings::get('autologin', 0);
             $connection = self::getDBConnectionParams();
-            if($connection['driver'] == 'mysql') {
-                $server = self::getMySQLServerAddress();
-                $params = '?server='.$server.'&username='.$connection['username'].'&db='.$connection['database'];
-            } elseif($connection['driver'] == 'sqlite') {
-                $params = '?sqlite=&username=&db=' . $connection['database'];
-            } else {
-                $params = '';
+
+            if($autologin === 0 || $connection['driver'] != $autologin || ($nav == true && $mode == 2)) { return ''; }
+
+            switch($autologin) {
+                case 'mysql':
+                    $server = self::getDBSQLServerAddress();
+                    $params = '?server='.$server.'&username='.$connection['username'].'&db='.$connection['database'];
+                    break;
+                case 'pgsql':
+                    $server = self::getDBSQLServerAddress();
+                    $params = '?pgsql='.$server.'&username='.$connection['username'].'&db='.$connection['database'];
+                    break;
+                case 'sqlite':
+                    $params = '?sqlite=&username=&db=' . $connection['database'];
+                    break;
+                default:
+                    $params = '';
             }
+
             return $params;
+
         }
 
-        public static function getMySQLAutologinParams() {
+        public static function getDBAutologinParams() {
             $connection = self::getDBConnectionParams();
-            $server     = self::getMySQLServerAddress();
+            $server     = self::getDBSQLServerAddress();
             return [
                 'driver'   => $connection['driver'],
                 'server'   => $server,
@@ -40,7 +51,7 @@
             return $connection;
         }
 
-        private static function getMySQLServerAddress() {
+        private static function getDBSQLServerAddress() {
             $connection = self::getDBConnectionParams();
             $server = $connection['host'] . (($connection['port'] != '') ? ':' . $connection['port'] : '');
             return $server;

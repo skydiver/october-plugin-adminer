@@ -6,43 +6,29 @@ fields:
 
     mode_section:
         label  : martin.adminer::lang.settings.mode
-        comment: martin.adminer::lang.settings.comments.mode
+        comment: martin.adminer::lang.settings.mode_comment
         type   : section
 
     mode:
-        span    : left
-        type    : radio
+        type    : balloon-selector
         default : 1
         options :
             1: martin.adminer::lang.settings.full_window
             2: martin.adminer::lang.settings.iframe
 
     autologin_section:
-        label  : martin.adminer::lang.settings.autologin
-        comment: martin.adminer::lang.settings.comments.autologin
-        type   : section
+        label   : martin.adminer::lang.settings.autologin
+        comment : martin.adminer::lang.settings.autologin_comment
+        type    : section
+        cssClass: m-t-md
 
     autologin:
-        span   : left
-        type   : switch
-        default: false
-
-    sqlite_autologin_section:
-        label  : martin.adminer::lang.settings.sqlite_autologin
-        comment: martin.adminer::lang.settings.comments.sqlite_autologin
-        type   : section
-
-    sqlite_autologin:
-        span   : left
-        type   : switch
-        default: false
-
-    sqlite_path:
-        span    : right
-        disabled: true
-        hidden  : true
-        comment : martin.adminer::lang.settings.comments.sqlite_path
-        trigger :
-            action   : show
-            field    : sqlite_autologin
-            condition: checked
+        span      : left
+        type      : dropdown
+        showSearch: false
+        default   : 0
+        options   :
+            0     : Disabled
+            mysql : MySQL
+            pgsql : PostgreSQL
+            sqlite: SQLite

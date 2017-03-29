@@ -20,6 +20,9 @@
                 case 'mysql':
                     require_once(plugins_path() . '/martin/adminer/classes/customizations/MySQL.php');
                     return new AdminerCustomization($load_plugins);
+                case 'pgsql':
+                    require_once(plugins_path() . '/martin/adminer/classes/customizations/pgSQL.php');
+                    return new AdminerCustomization($load_plugins);
                 case 'sqlite':
                     require_once(plugins_path() . '/martin/adminer/classes/customizations/SQLite.php');
                     return new AdminerCustomization($load_plugins);

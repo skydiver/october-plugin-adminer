@@ -27,15 +27,6 @@
             parent::__construct();
         }
 
-        public function filterFields($fields, $context = null) {
-            $driver = config('database.default');
-            if($driver == "sqlite") {
-                $conn = OctoberAdminerHelper::getDBConnectionParams();
-                $fields->sqlite_path->hidden = false;
-                $fields->sqlite_path->value  = $conn['database'];
-            }
-        }
-
     }
 
 ?>

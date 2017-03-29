@@ -42,8 +42,8 @@
         private function runAdminerLoader() {
             $mode      = Settings::get('mode'     , 1);
             $autologin = Settings::get('autologin', 0);
-            if($mode      == 2) { Session::flash('ADMINER_PLUGINS', ['frames' => 'AdminerFrames']); }
-            if($autologin == 1) { Session::flash('ADMINER_AUTOLOGIN', true); }
+            if($mode       == 2) { Session::flash('ADMINER_PLUGINS', ['frames' => 'AdminerFrames']); }
+            if($autologin !== 0) { Session::flash('ADMINER_AUTOLOGIN', true); }
         }
 
         private function runAdminerIFrame() {

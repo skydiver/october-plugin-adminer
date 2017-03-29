@@ -10,7 +10,7 @@
             if(Session::get('ADMINER_AUTOLOGIN') === true) {
                 require_once(plugins_path() . '/martin/adminer/classes/OctoberAdminerHelper.php');
                 $connection = Martin\Adminer\Classes\OctoberAdminerHelper::getDBAutologinParams();
-                if($connection['driver'] == 'mysql') {
+                if($connection['driver'] == 'pgsql') {
                     return [$connection['server'], $connection['username'], $connection['password']];
                 }
             } else {

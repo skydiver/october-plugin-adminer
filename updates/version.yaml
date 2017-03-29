@@ -28,3 +28,5 @@
     - Update the Hungarian translate
 1.2.7:
     - Upgrade to Adminer 4.3.0
+1.2.8:
+    - Added PostgreSQL Autologin

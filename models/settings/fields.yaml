@@ -32,13 +32,3 @@ fields:
             mysql : MySQL
             pgsql : PostgreSQL
             sqlite: SQLite
-
-#    sqlite_path:
-#        span    : right
-#        disabled: true
-#        hidden  : true
-#        comment : martin.adminer::lang.settings.comments.sqlite_path
-#        trigger :
-#            action   : show
-#            field    : sqlite_autologin
-#            condition: checked

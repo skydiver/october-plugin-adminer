@@ -19,6 +19,8 @@
             'iframe'            => 'Iframe',
             'autologin'         => 'Autologin',
             'autologin_comment' => 'Login directly into your OctoberCMS database',
+            'themes'            => 'Theme',
+            'themes_comment'    => 'Select Adminer theme',
         ],
 
         'permissions' => [

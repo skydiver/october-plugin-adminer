@@ -35,6 +35,7 @@
 
         private function runAdminer() {
             $this->runAdminerLoader();
+            define('ADMINER_THEME', self::getTheme());
             require(plugins_path() . '/martin/adminer/classes/adminer-loader.php');
             return new \Martin\Adminer\Classes\EmptyResponse();
         }
@@ -51,6 +52,13 @@
             return \View::make('martin.adminer::iframe', [
                 'URL' => \Backend::url('martin/adminer/octoberadminer/iframe' . OctoberAdminerHelper::getAutologinURL())
             ]);
+        }
+
+        private function getTheme() {
+            if(Settings::get('theme')) {
+                $css = '/plugins/martin/adminer/assets/themes/' . Settings::get('theme') . '/adminer.css?cache=' . date('YmdHis');
+                return url($css);
+            }
         }
 
     }

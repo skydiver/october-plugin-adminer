@@ -32,3 +32,14 @@ fields:
             mysql : MySQL
             pgsql : PostgreSQL
             sqlite: SQLite
+
+    themes_section:
+        label   : martin.adminer::lang.settings.themes
+        comment : martin.adminer::lang.settings.themes_comment
+        type    : section
+        cssClass: m-t-md
+
+    theme:
+        span      : left
+        type      : dropdown
+        default   : ""

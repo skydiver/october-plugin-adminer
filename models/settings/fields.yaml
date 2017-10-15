@@ -43,3 +43,24 @@ fields:
         span      : left
         type      : dropdown
         default   : ""
+
+
+    hide_menu_section:
+        label   : martin.adminer::lang.settings.hide_menu
+        comment : martin.adminer::lang.settings.hide_menu_comment
+        type    : section
+        cssClass: m-t-md
+
+    hide_menu:
+        span   : left
+        type   : switch
+        default: false
+
+    hide_menu_link:
+        span   : left
+        type   : partial
+        path   : $/martin/adminer/models/settings/_adminer_link.htm
+        trigger:
+            action   : show
+            field    : hide_menu
+            condition: checked

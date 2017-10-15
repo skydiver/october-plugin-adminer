@@ -21,6 +21,8 @@
             'autologin_comment' => 'Login directly into your OctoberCMS database',
             'themes'            => 'Theme',
             'themes_comment'    => 'Select Adminer theme',
+            'hide_menu'         => 'Menu Item',
+            'hide_menu_comment' => 'Hide main menu Adminer item',
         ],
 
         'permissions' => [

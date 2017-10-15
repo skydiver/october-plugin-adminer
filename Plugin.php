@@ -20,6 +20,11 @@
         }
 
         public function registerNavigation() {
+            
+            if(Settings::get('hide_menu', 0) == 1) {
+                return [];
+            }
+            
             return [
                 'adminer' => [
                     'label'       => 'martin.adminer::lang.navigation.label',

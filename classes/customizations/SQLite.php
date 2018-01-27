@@ -1,16 +1,19 @@
 <?php
 
-    class AdminerCustomization extends AdminerPlugin {
+class AdminerCustomization extends AdminerPlugin {
 
-        function name() {
-            return Lang::get('martin.adminer::lang.plugin.name');
-        }
-
-        function login($login, $password) {
-            return true;
-        }
-
+    function name() {
+        return Lang::get('martin.adminer::lang.plugin.name');
     }
 
+    function css() {
+        return [ADMINER_THEME];
+    }
+
+    function login($login, $password) {
+        return true;
+    }
+
+}
 
 ?>

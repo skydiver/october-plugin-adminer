@@ -2,6 +2,7 @@
 
     namespace Martin\Adminer\Controllers;
 
+    use Config;
     use Session;
     use Backend\Classes\Controller;
     use Martin\Adminer\Models\Settings as Settings;
@@ -13,6 +14,7 @@
         public $requiredPermissions = ['martin.adminer.access_adminer'];
 
         public function __construct() {
+            Config::set('cms.enableCsrfProtection', false);
             parent::__construct();
             \BackendMenu::setContext('Martin.Adminer', 'adminer', 'octoberadminer');
         }

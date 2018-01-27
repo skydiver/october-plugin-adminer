@@ -39,3 +39,5 @@
     - haeckel theme updated
 1.3.2:
     - added French language (thanks to pvullioud)
+1.4.0:
+    - Upgrade to Adminer 4.5.0

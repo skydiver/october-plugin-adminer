@@ -41,3 +41,5 @@
     - added French language (thanks to pvullioud)
 1.4.0:
     - Upgrade to Adminer 4.5.0
+1.6.2:
+    - Upgrade to Adminer 4.6.2

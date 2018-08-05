@@ -12,11 +12,11 @@ class OctoberAdminerHelper {
         $autologin  = Settings::get('autologin', 0);
         $connection = self::getDBConnectionParams();
 
-        if ($autologin === 0 || $connection['driver'] != $autologin || ($nav == true && $mode == 2)) {
+        if ($autologin == 0 || ($nav == true && $mode == 2)) {
             return '';
         }
 
-        switch($autologin) {
+        switch($connection['driver']) {
             case 'mysql':
                 $server = self::_getDBSQLServerAddress();
                 $params = '?server='.$server.'&username='.$connection['username'].'&db='.$connection['database'];

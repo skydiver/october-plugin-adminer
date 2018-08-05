@@ -19,15 +19,12 @@ fields:
         cssClass: m-t-md
 
     autologin:
-        span      : left
-        type      : dropdown
-        showSearch: false
-        default   : 0
-        options   :
-            0     : Disabled
-            mysql : MySQL
-            pgsql : PostgreSQL
-            sqlite: SQLite
+        span   : left
+        type   : balloon-selector
+        default: 0
+        options:
+            0: Disabled
+            1: Enabled
 
     themes_section:
         label   : martin.adminer::lang.settings.themes

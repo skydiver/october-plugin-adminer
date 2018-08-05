@@ -1,62 +1,64 @@
 <?php
 
-    namespace Martin\Adminer\Classes;
+namespace Martin\Adminer\Classes;
 
-    use Martin\Adminer\Models\Settings as Settings;
+use Martin\Adminer\Models\Settings as Settings;
 
-    class OctoberAdminerHelper {
+class OctoberAdminerHelper {
 
-        public static function getAutologinURL($nav=false) {
+    public static function getAutologinURL($nav=false) {
 
-            $mode       = Settings::get('mode'     , 1);
-            $autologin  = Settings::get('autologin', 0);
-            $connection = self::getDBConnectionParams();
+        $mode       = Settings::get('mode', 1);
+        $autologin  = Settings::get('autologin', 0);
+        $connection = self::getDBConnectionParams();
 
-            if($autologin === 0 || $connection['driver'] != $autologin || ($nav == true && $mode == 2)) { return ''; }
-
-            switch($autologin) {
-                case 'mysql':
-                    $server = self::getDBSQLServerAddress();
-                    $params = '?server='.$server.'&username='.$connection['username'].'&db='.$connection['database'];
-                    break;
-                case 'pgsql':
-                    $server = self::getDBSQLServerAddress();
-                    $params = '?pgsql='.$server.'&username='.$connection['username'].'&db='.$connection['database'];
-                    break;
-                case 'sqlite':
-                    $params = '?sqlite=&username=&db=' . $connection['database'];
-                    break;
-                default:
-                    $params = '';
-            }
-
-            return $params;
-
+        if ($autologin === 0 || $connection['driver'] != $autologin || ($nav == true && $mode == 2)) {
+            return '';
         }
 
-        public static function getDBAutologinParams() {
-            $connection = self::getDBConnectionParams();
-            $server     = self::getDBSQLServerAddress();
-            return [
-                'driver'   => $connection['driver'],
-                'server'   => $server,
-                'username' => $connection['username'],
-                'password' => $connection['password']
-            ];
+        switch($autologin) {
+            case 'mysql':
+                $server = self::_getDBSQLServerAddress();
+                $params = '?server='.$server.'&username='.$connection['username'].'&db='.$connection['database'];
+                break;
+            case 'pgsql':
+                $server = self::_getDBSQLServerAddress();
+                $params = '?pgsql='.$server.'&username='.$connection['username'].'&db='.$connection['database'];
+                break;
+            case 'sqlite':
+                $params = '?sqlite=&username=&db=' . $connection['database'];
+                break;
+            default:
+                $params = '';
         }
 
-        public static function getDBConnectionParams() {
-            $default    = config('database.default');
-            $connection = config('database.connections.' . $default);
-            return $connection;
-        }
-
-        private static function getDBSQLServerAddress() {
-            $connection = self::getDBConnectionParams();
-            $server = $connection['host'] . (($connection['port'] != '') ? ':' . $connection['port'] : '');
-            return $server;
-        }
+        return $params;
 
     }
+
+    public static function getDBAutologinParams() {
+        $connection = self::getDBConnectionParams();
+        $server     = self::_getDBSQLServerAddress();
+        return [
+            'driver'   => $connection['driver'],
+            'server'   => $server,
+            'username' => $connection['username'],
+            'password' => $connection['password']
+        ];
+    }
+
+    public static function getDBConnectionParams() {
+        $default    = config('database.default');
+        $connection = config('database.connections.' . $default);
+        return $connection;
+    }
+
+    private static function _getDBSQLServerAddress() {
+        $connection = self::getDBConnectionParams();
+        $server = $connection['host'] . (($connection['port'] != '') ? ':' . $connection['port'] : '');
+        return $server;
+    }
+
+}
 
 ?>

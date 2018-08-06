@@ -75,14 +75,14 @@ tabs:
         ########################################################################
         # Advanced Tab
         ########################################################################
-        default_connection_section:
+        use_connection_section:
             tab        : martin.adminer::lang.settings.tabs.advanced
-            label      : martin.adminer::lang.settings.def_conn
-            comment    : martin.adminer::lang.settings.def_conn_comment
+            label      : martin.adminer::lang.settings.use_conn
+            comment    : martin.adminer::lang.settings.use_conn_comment
             commentHtml: true
             type       : section
 
-        default_connection:
+        use_connection:
             tab       : martin.adminer::lang.settings.tabs.advanced
             span      : left
             type      : dropdown

@@ -24,8 +24,8 @@
             'themes_comment'    => 'Select Adminer theme',
             'hide_menu'         => 'Menu Item',
             'hide_menu_comment' => 'Hide main menu Adminer item',
-            'def_conn'          => 'Autologin default connection',
-            'def_conn_comment'  => 'Adminer will use default October database connection. You can override this setting here.',
+            'use_conn'          => 'Autologin default connection',
+            'use_conn_comment'  => 'Adminer will use default October database connection. You can override this setting here.',
         ],
 
         'permissions' => [

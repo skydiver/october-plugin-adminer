@@ -48,7 +48,7 @@ class OctoberAdminerHelper {
     }
 
     public static function getDBConnectionParams() {
-        $conn = Settings::get('default_connection', 0);
+        $conn = Settings::get('use_connection', 0);
         if (empty($conn)) {
             $default = config('database.default');
             $connection = config('database.connections.' . $default);

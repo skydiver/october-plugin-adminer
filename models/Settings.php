@@ -35,7 +35,7 @@ class Settings extends Model {
         return ['' => 'None'] + $themes;
     }
 
-    public function getDefaultConnectionOptions() {
+    public function getUseConnectionOptions() {
         $connections = OctoberAdminerHelper::getDBConnections();
         $connections = $connections->map(function ($item, $key) {
             $label = sprintf('%s', $key);

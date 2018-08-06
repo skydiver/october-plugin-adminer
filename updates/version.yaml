@@ -43,3 +43,9 @@
     - Upgrade to Adminer 4.5.0
 1.6.2:
     - Upgrade to Adminer 4.6.2
+1.6.3:
+    - Upgrade to Adminer 4.6.3
+    - New/updated themes
+    - Settings page reorganization
+    - Themes selector includes previews
+    - New setting to override default database connection

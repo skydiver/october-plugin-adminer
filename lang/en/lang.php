@@ -25,7 +25,7 @@
             'hide_menu'         => 'Menu Item',
             'hide_menu_comment' => 'Hide main menu Adminer item',
             'use_conn'          => 'Autologin default connection',
-            'use_conn_comment'  => 'Adminer will use default October database connection. You can override this setting here.',
+            'use_conn_comment'  => 'Adminer will use default October database connection. You can override this setting here.<br>Add new connections on <strong>config/database.php</strong>. <a href="https://laravel.com/docs/5.6/database#configuration" target="_blank">More info</a>',
         ],
 
         'permissions' => [

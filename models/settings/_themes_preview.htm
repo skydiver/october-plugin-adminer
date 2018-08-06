@@ -1,0 +1,55 @@
+<?php
+use Martin\Adminer\Classes\OctoberAdminerHelper;
+$themes = OctoberAdminerHelper::getThemes();
+?>
+<style>
+    #adminer-themes-preview {
+        list-style: none;
+    }
+    #adminer-themes-preview li {
+        float: left;
+        padding-right: 2rem;
+        padding-bottom: 2rem;
+    }
+    #adminer-themes-preview input[type=radio] {
+        display:none;
+    }
+    #adminer-themes-preview input[type=radio]:checked + .adminer-theme-preview {
+        padding: 4px;
+        border: solid 5px #333;
+    }
+    #adminer-themes-preview .adminer-theme-preview {
+        width: 100px;
+        height: 100px;
+        padding: 4px;
+        border: solid 5px transparent;
+        border-radius: 10px;
+        box-sizing: content-box;
+    }
+    #adminer-themes-preview .adminer-theme-preview:hover {
+        border: solid 5px #BBB;
+        cursor: pointer;
+    }
+    #adminer-themes-preview div.adminer-theme-preview {
+        line-height: 100px;
+        background-color: #DDD;
+    }
+    #adminer-themes-preview div {
+        text-align: center;
+    }
+</style>
+<ul id="adminer-themes-preview">
+<?php foreach($themes as $key => $theme): ?>
+    <li>
+        <label for="theme-<?php echo $key ?>">
+            <input type='radio' name='Settings[theme]' value='<?php echo $theme ?>' id="theme-<?php echo $key ?>" <?php echo ($value == $theme) ? 'checked="checked"' : '' ?> />
+        <?php if ($key !== ''): ?>
+            <img src="/plugins/martin/adminer/assets/themes_previews/<?php echo $theme ?>/preview.png" class="adminer-theme-preview">
+            <div><?php echo $theme ?></div>
+        <?php else: ?>
+            <div class="adminer-theme-preview">No theme</div>
+        <?php endif ?>
+        </label>
+    </li>
+<?php endforeach ?>
+</ul>

@@ -2,7 +2,7 @@
 
 namespace Martin\Adminer\Models;
 
-use File, Lang, Model;
+use Lang, Model;
 use Martin\Adminer\Classes\OctoberAdminerHelper;
 
 class Settings extends Model {
@@ -23,16 +23,6 @@ class Settings extends Model {
             'mode' => Lang::get('martin.ssologin::lang.settings.mode'),
         ];
         parent::__construct();
-    }
-
-    public function getThemeOptions($value, $formData) {
-        $directories = File::directories(plugins_path() . '/martin/adminer/assets/themes');
-        foreach ($directories as $directory) {
-            $theme = basename($directory);
-            $themes[$theme] = $theme;
-        }
-        ksort($themes);
-        return ['' => 'None'] + $themes;
     }
 
     public function getUseConnectionOptions() {

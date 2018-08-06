@@ -68,8 +68,8 @@ tabs:
 
         theme:
             tab    : martin.adminer::lang.settings.tabs.themes
-            span   : left
-            type   : dropdown
+            type   : partial
+            path   : $/martin/adminer/models/settings/_themes_preview.htm
             default: ""
 
         ########################################################################

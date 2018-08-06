@@ -2,6 +2,7 @@
 
 namespace Martin\Adminer\Classes;
 
+use File;
 use Martin\Adminer\Models\Settings as Settings;
 
 class OctoberAdminerHelper {
@@ -72,6 +73,16 @@ class OctoberAdminerHelper {
                 }
                 return true;
             });
+    }
+
+    public static function getThemes() {
+        $directories = File::directories(plugins_path() . '/martin/adminer/assets/themes');
+        foreach ($directories as $directory) {
+            $theme = basename($directory);
+            $themes[$theme] = $theme;
+        }
+        ksort($themes);
+        return ['' => 'None'] + $themes;
     }
 
 }

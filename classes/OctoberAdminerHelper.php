@@ -48,8 +48,13 @@ class OctoberAdminerHelper {
     }
 
     public static function getDBConnectionParams() {
-        $default    = config('database.default');
-        $connection = config('database.connections.' . $default);
+        $conn = Settings::get('default_connection', 0);
+        if (empty($conn)) {
+            $default = config('database.default');
+            $connection = config('database.connections.' . $default);
+        } else {
+            $connection = config('database.connections.' . $conn);
+        }
         return $connection;
     }
 

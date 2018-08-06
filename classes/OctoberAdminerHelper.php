@@ -59,6 +59,16 @@ class OctoberAdminerHelper {
         return $server;
     }
 
+    public static function getDBConnections() {
+        return collect(config('database.connections'))
+            ->filter(function ($item, $key) {
+                if (empty($item['driver']) || !in_array($item['driver'], ['sqlite', 'mysql', 'pgsql'])) {
+                    return false;
+                }
+                return true;
+            });
+    }
+
 }
 
 ?>

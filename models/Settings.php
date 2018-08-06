@@ -35,6 +35,19 @@ class Settings extends Model {
         return ['' => 'None'] + $themes;
     }
 
+    public function getDefaultConnectionOptions() {
+        $connections = OctoberAdminerHelper::getDBConnections();
+        $connections = $connections->map(function ($item, $key) {
+            $label = sprintf('%s', $key);
+            if (!empty($item['driver'])) {
+                $label .= sprintf(' [Driver: %s]', $item['driver']);
+            }
+            return $label;
+        });
+        $connections->put('', '--- Use default connection ---');
+        return $connections->sort();
+    }
+
 }
 
 ?>

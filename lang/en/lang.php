@@ -12,6 +12,7 @@
         ],
 
         'settings' => [
+            'tabs'              => ['general' => 'General', 'themes' => 'Themes', 'advanced' => 'Advanced'],
             'label'             => 'Adminer settings',
             'mode'              => 'Launch mode',
             'mode_comment'      => 'Defines how to launch Adminer',
@@ -23,6 +24,8 @@
             'themes_comment'    => 'Select Adminer theme',
             'hide_menu'         => 'Menu Item',
             'hide_menu_comment' => 'Hide main menu Adminer item',
+            'def_conn'          => 'Autologin default connection',
+            'def_conn_comment'  => 'Adminer will use default October database connection. You can override this setting here.',
         ],
 
         'permissions' => [

@@ -34,7 +34,7 @@ class Settings extends Model {
             }
             return $label;
         });
-        $connections->put('', '--- Use default connection ---');
+        $connections->put('', '--- '.Lang::get('martin.adminer::lang.settings.use_conn_default').' ---');
         return $connections->sort();
     }
 

@@ -28,11 +28,8 @@ tabs:
         autologin:
             tab    : martin.adminer::lang.settings.tabs.general
             span   : left
-            type   : balloon-selector
-            default: 0
-            options:
-                0: Disabled
-                1: Enabled
+            type   : switch
+            default: false
 
         hide_menu_section:
             tab     : martin.adminer::lang.settings.tabs.general

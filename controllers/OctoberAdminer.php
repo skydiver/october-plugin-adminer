@@ -48,7 +48,7 @@ class OctoberAdminer extends Controller {
         if ($mode == 2) {
             Session::flash('ADMINER_PLUGINS', ['frames' => 'AdminerFrames']);
         }
-        if ($autologin !== 0) {
+        if ($autologin != 0) {
             Session::flash('ADMINER_AUTOLOGIN', true);
         }
     }

@@ -54,3 +54,8 @@
     - Changed Autologin control type
 1.6.3.2:
     - updated Hungarian language (thanks to gergo85)
+1.7.0:
+    - Upgrade to Adminer 4.7.0
+    - Autologin 100% working
+    - Code refactoring
+    - Updated themes

@@ -19,7 +19,7 @@ if (!function_exists('adminer_object')) {
 
             $driver = config('database.default');
 
-            if ($driver == 'mysql') {
+            if ($driver == 'mysql' || $driver == 'pgsql') {
                 include_once plugins_path('martin/adminer/classes/customizations/MySQL.php');
                 return new MySQL($load_plugins);
             }

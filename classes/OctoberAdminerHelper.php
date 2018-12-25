@@ -20,14 +20,14 @@ class OctoberAdminerHelper {
         switch($connection['driver']) {
             case 'mysql':
                 $server = self::_getDBSQLServerAddress();
-                $params = '?server='.$server.'&username='.$connection['username'].'&db='.$connection['database'];
+                $params = sprintf('?server=%s&username=%s&db=%s', $server, $connection['username'], $connection['database']);
                 break;
             case 'pgsql':
                 $server = self::_getDBSQLServerAddress();
-                $params = '?pgsql='.$server.'&username='.$connection['username'].'&db='.$connection['database'];
+                $params = sprintf('?pgsql=%s&username=%s&db=%s', $server, $connection['username'], $connection['database']);
                 break;
             case 'sqlite':
-                $params = '?sqlite=&username=&db=' . $connection['database'];
+                $params = sprintf('?sqlite=&username=&db=%s', $connection['database']);
                 break;
             default:
                 $params = '';

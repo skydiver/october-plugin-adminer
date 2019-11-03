@@ -59,3 +59,6 @@
     - Autologin 100% working
     - Code refactoring
     - Updated themes
+1.7.4:
+    - Upgrade to Adminer 4.7.4
+    - Updated themes

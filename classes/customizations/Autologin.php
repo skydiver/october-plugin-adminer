@@ -8,4 +8,16 @@ class Autologin extends AdminerCustomization {
         return true;
     }
 
+    function permanentLogin($create=false) {
+        return false;
+    }
+
+    function loginForm() {
+        echo '<style>
+            form table, form label { display:none }
+            input[type=submit] { width:300px; }
+        </style>';
+        echo parent::loginForm();
+    }
+
 }

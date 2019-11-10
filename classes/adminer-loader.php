@@ -38,6 +38,6 @@ if (!function_exists('adminer_object')) {
 }
 
 // LOAD MAIN ADMINER CLASS
-require plugins_path() . '/martin/adminer/classes/adminer-4.7.0-en.php';
+require plugins_path() . '/martin/adminer/classes/adminer-4.7.4-en.php';
 
 ?>
